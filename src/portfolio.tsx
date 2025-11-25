@@ -512,7 +512,7 @@ export default function Portfolio() {
             <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all">
               <Linkedin className="mx-auto mb-4 text-white" size={32} />
               <p className="text-white font-semibold mb-2">LinkedIn</p>
-              <a href="https://www.linkedin.com/in/rayane-meksem" target="_blank" rel="noopener noreferrer" className="text-blue-100 hover:text-white transition-colors">
+              <a href="https://www.linkedin.com/in/rayane-meksem-66b591294" target="_blank" rel="noopener noreferrer" className="text-blue-100 hover:text-white transition-colors">
                 linkedin.com/in/rayane-meksem
               </a>
             </div>
