@@ -217,7 +217,7 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* About Section */}
+     {/* About Section */}
       <section id="apropos" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
@@ -226,56 +226,78 @@ export default function Portfolio() {
           <p className="text-center text-gray-600 mb-12">
             Découvrez mon parcours, mes passions et ce qui me motive
           </p>
+      
           <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl shadow-lg">
-            <p className="text-gray-700 text-lg leading-relaxed mb-6">
-              Étudiant en troisième année de MIASHS, parcours MIAGE, je me forme à l'intersection 
-              de l'informatique, des mathématiques et de la gestion. Passionné de développement web 
-              et de data, j'ai mené plusieurs projets concrets qui ont renforcé mes compétences en 
-              programmation, en conception d'interfaces et ma capacité à travailler en équipe.
+            
+            {/* Introduction */}
+            <p className="text-gray-700 text-lg leading-relaxed mb-8">
+              Étudiant en troisième année de MIASHS, parcours MIAGE, je me forme à 
+              l'intersection de l'informatique, des mathématiques et de la gestion. 
+              Passionné de développement web et de data, j'ai mené plusieurs projets 
+              concrets qui ont renforcé mes compétences en programmation, en 
+              conception d'interfaces et en travail d’équipe.
             </p>
-            <div className="grid md:grid-cols-2 gap-6 mt-8">
-              <div className="flex items-start gap-3">
-                <MapPin className="text-blue-600 mt-1" size={24} />
+      
+            {/* Info Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              
+              {/* Localisation */}
+              <div className="flex items-center gap-4">
+                <MapPin className="text-blue-600" size={26} />
                 <div>
                   <p className="font-semibold text-gray-900">Localisation</p>
                   <p className="text-gray-600">Nanterre, Île-de-France</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <Calendar className="text-blue-600 mt-1" size={24} />
+      
+              {/* Disponibilité */}
+              <div className="flex items-center gap-4">
+                <Calendar className="text-blue-600" size={26} />
                 <div>
                   <p className="font-semibold text-gray-900">Disponibilité</p>
                   <p className="text-gray-600">Stage dès avril 2026 (2-5 mois)</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <Mail className="text-blue-600 mt-1" size={24} />
+      
+              {/* Email */}
+              <div className="flex items-center gap-4">
+                <Mail className="text-blue-600" size={26} />
                 <div>
                   <p className="font-semibold text-gray-900">Email</p>
-                  <p className="text-gray-600">rayanemksm5@gmail.com</p>
+                  <p className="text-gray-600 break-all">rayanemksm5@gmail.com</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3">
-                <Phone className="text-blue-600 mt-1" size={24} />
+      
+              {/* Téléphone */}
+              <div className="flex items-center gap-4">
+                <Phone className="text-blue-600" size={26} />
                 <div>
                   <p className="font-semibold text-gray-900">Téléphone</p>
                   <p className="text-gray-600">06 02 48 49 35</p>
                 </div>
               </div>
+      
             </div>
-            <div className="mt-8 pt-6 border-t border-gray-300">
-              <p className="font-semibold text-gray-900 mb-3">Centres d'intérêt</p>
+      
+            {/* Interests */}
+            <div className="mt-10 pt-6 border-t border-gray-300">
+              <p className="font-semibold text-gray-900 mb-4">Centres d'intérêt</p>
               <div className="flex flex-wrap gap-3">
-                {['Programmation', 'Randonnée', 'Voyage', 'Escape game'].map((interest, i) => (
-                  <span key={i} className="bg-white px-4 py-2 rounded-full text-gray-700 font-medium shadow-sm">
+                {["Programmation", "Randonnée", "Voyage", "Escape game"].map((interest, i) => (
+                  <span
+                    key={i}
+                    className="bg-white px-4 py-2 rounded-full text-gray-700 font-medium shadow-sm"
+                  >
                     {interest}
                   </span>
                 ))}
               </div>
             </div>
+      
           </div>
         </div>
       </section>
+
 
       {/* Projects Section */}
       <section id="projets" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-blue-50">
