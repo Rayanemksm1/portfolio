@@ -207,7 +207,7 @@ export default function Portfolio() {
             <a href="https://github.com/Rayanemksm1" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
               <Github size={28} />
             </a>
-            <a href="https://www.linkedin.com/in/rayane-meksem" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
+            <a href="https://www.linkedin.com/in/rayane-meksem-66b591294" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
               <Linkedin size={28} />
             </a>
             <a href="mailto:rayanemksm5@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors">
