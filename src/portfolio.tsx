@@ -143,7 +143,7 @@ export default function Portfolio() {
           {/* Mobile Menu */}
           {menuOpen && (
             <div className="md:hidden pb-4">
-              {['Accueil', 'À propos', 'Projets', 'Compétences', 'Expérience', 'Contact'].map((item) => (
+              {['Accueil', 'À propos', 'Projets', 'Compétences', 'Expériences', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase().replace('à propos', 'apropos'))}
@@ -419,7 +419,7 @@ export default function Portfolio() {
 
      {/* Experience Section */}
 <section
-  id="Expérience"
+  id="Expériences"
   className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-blue-50"
 >
   <div className="max-w-4xl mx-auto">
