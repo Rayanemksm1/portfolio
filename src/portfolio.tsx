@@ -395,50 +395,73 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* Experience Section */}
-      <section id="expérience" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
-            Mon Parcours
-          </h2>
-          <p className="text-center text-gray-600 mb-12">
-            Mon expérience professionnelle et ma formation académique
-          </p>
-          <div className="space-y-8">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className={`bg-white p-6 rounded-xl shadow-lg border-l-4 ${
-                  exp.type === 'Formation' ? 'border-purple-600' : 'border-blue-600'
+     {/* Experience Section */}
+<section
+  id="experience"
+  className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-blue-50"
+>
+  <div className="max-w-4xl mx-auto">
+    <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
+      Mon Parcours
+    </h2>
+    <p className="text-center text-gray-600 mb-12">
+      Mon expérience professionnelle et ma formation académique
+    </p>
+
+    <div className="space-y-10">
+      {experiences.map((exp, index) => (
+        <div
+          key={index}
+          className={`bg-white p-6 rounded-xl shadow-md border-l-4 transition-all hover:shadow-xl ${
+            exp.type === "Formation"
+              ? "border-purple-600"
+              : "border-blue-600"
+          }`}
+        >
+          {/* Header Section */}
+          <div className="flex justify-between items-start flex-wrap gap-4">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900">
+                {exp.poste}
+              </h3>
+              <p
+                className={`font-semibold ${
+                  exp.type === "Formation"
+                    ? "text-purple-600"
+                    : "text-blue-600"
                 }`}
               >
-                <div className="flex justify-between items-start mb-3 flex-wrap gap-2">
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{exp.poste}</h3>
-                    <p className={`font-semibold mb-2 ${
-                      exp.type === 'Formation' ? 'text-purple-600' : 'text-blue-600'
-                    }`}>
-                      {exp.entreprise}
-                    </p>
-                  </div>
-                  <span className={`px-4 py-2 rounded-full text-sm font-semibold ${
-                    exp.type === 'Formation' 
-                      ? 'bg-purple-100 text-purple-700' 
-                      : 'bg-blue-100 text-blue-700'
-                  }`}>
-                    {exp.type}
-                  </span>
-                </div>
-                <p className="text-gray-600 text-sm mb-3 flex items-center gap-2">
-                  <Calendar size={16} />
-                  {exp.periode}
-                </p>
-                <p className="text-gray-700">{exp.description}</p>
-              </div>
-            ))}
+                {exp.entreprise}
+              </p>
+            </div>
+
+            <span
+              className={`px-4 py-1.5 rounded-full text-sm font-semibold ${
+                exp.type === "Formation"
+                  ? "bg-purple-100 text-purple-700"
+                  : "bg-blue-100 text-blue-700"
+              }`}
+            >
+              {exp.type}
+            </span>
           </div>
+
+          {/* Date */}
+          <p className="text-gray-600 text-sm mt-4 mb-3 flex items-center gap-2">
+            <Calendar size={16} />
+            {exp.periode}
+          </p>
+
+          {/* Description */}
+          <p className="text-gray-700 leading-relaxed">
+            {exp.description}
+          </p>
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Contact Section */}
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 to-purple-600">
