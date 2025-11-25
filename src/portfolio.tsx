@@ -375,18 +375,23 @@ export default function Portfolio() {
             ))}
           </div>
           <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 p-8 rounded-2xl text-white text-center">
-            <h3 className="text-2xl font-bold mb-3">Langues</h3>
-            <div className="flex justify-center gap-12 flex-wrap">
-              <div>
-                <p className="text-xl font-semibold mb-1">Français</p>
-                <p className="text-blue-100">Langue Maternelle/Bilingue</p>
-              </div>
-              <div>
-                <p className="text-xl font-semibold mb-1">Anglais</p>
-                <p className="text-blue-100">Avancé</p>
+              <h3 className="text-2xl font-bold mb-6">Langues</h3>
+            
+              <div className="flex justify-center items-start gap-16 flex-wrap">
+                
+                <div className="flex flex-col items-center">
+                  <p className="text-xl font-semibold mb-1">Français</p>
+                  <p className="text-blue-100 text-sm">Langue Maternelle / Bilingue</p>
+                </div>
+            
+                <div className="flex flex-col items-center">
+                  <p className="text-xl font-semibold mb-1">Anglais</p>
+                  <p className="text-blue-100 text-sm">Avancé</p>
+                </div>
+            
               </div>
             </div>
-          </div>
+
         </div>
       </section>
 
