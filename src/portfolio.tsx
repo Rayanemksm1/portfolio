@@ -33,7 +33,7 @@ export default function Portfolio() {
       technologies: ["HTML/CSS", "JavaScript", "Python", "IA"],
       challenges: "Implémentation d'un système de chat temps réel et intégration d'une IA pour gérer la partie",
       solutions: "Architecture full-stack avec WebSockets pour la communication temps réel et algorithmes d'IA pour l'assistance au jeu",
-      githubUrl: "https://github.com/Rayanemksm1",
+      githubUrl: "https://github.com/Rayanemksm1/loupgarou",
       type: "Full Stack"
     },
     {
