@@ -120,7 +120,7 @@ export default function Portfolio() {
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              {['Accueil', 'À propos', 'Projets', 'Compétences', 'Formation', 'Contact'].map((item) => (
+              {['Accueil', 'À propos', 'Projets', 'Compétences', 'Parcours', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase().replace('à propos', 'apropos'))}
@@ -143,7 +143,7 @@ export default function Portfolio() {
           {/* Mobile Menu */}
           {menuOpen && (
             <div className="md:hidden pb-4">
-              {['Accueil', 'À propos', 'Projets', 'Compétences', 'Formation', 'Contact'].map((item) => (
+              {['Accueil', 'À propos', 'Projets', 'Compétences', 'Parcours', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase().replace('à propos', 'apropos'))}
@@ -419,7 +419,7 @@ export default function Portfolio() {
 
      {/* Experience Section */}
 <section
-  id="formation"
+  id="parcours"
   className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-blue-50"
 >
   <div className="max-w-4xl mx-auto">
