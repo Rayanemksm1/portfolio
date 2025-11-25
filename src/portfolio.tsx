@@ -120,7 +120,7 @@ export default function Portfolio() {
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              {['Accueil', 'À propos', 'Projets', 'Compétences', 'Expérience', 'Contact'].map((item) => (
+              {['Accueil', 'À propos', 'Projets', 'Compétences', 'Expériences', 'Contact'].map((item) => (
                 <button
                   key={item}
                   onClick={() => scrollToSection(item.toLowerCase().replace('à propos', 'apropos'))}
