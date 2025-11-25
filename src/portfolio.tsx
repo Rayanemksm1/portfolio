@@ -8,7 +8,7 @@ export default function Portfolio() {
   const projects = [
     {
       title: "Prédiction du Churn Client",
-      image: "/images/data.png",
+      image: "/data.png",
       description: "Modèle ML de prédiction du taux de désabonnement avec 95% de précision",
       technologies: ["Python", "Scikit-learn", "Pandas", "Régression Logistique", "Pipeline ML"],
       challenges: "Analyser 2000 clients et identifier les facteurs clés de churn avec encodage des variables catégorielles",
@@ -18,7 +18,7 @@ export default function Portfolio() {
     },
     {
       title: "ABS - E-commerce Matériaux",
-      image: "/images/ABS.png",
+      image: "/ABS.png",
       description: "Application web de gestion et vente de matériaux de construction",
       technologies: ["PHP", "MySQL", "HTML/CSS", "JavaScript", "Apache"],
       challenges: "Développement d'une architecture MVC avec gestion de panier, recherche de produits et interface responsive",
@@ -28,7 +28,7 @@ export default function Portfolio() {
     },
     {
       title: "Jeu du Loup Garou en ligne",
-      image: "/images/loup.jpg",
+      image: "/loup.jpg",
       description: "Jeu multijoueur avec IA et chat en temps réel",
       technologies: ["HTML/CSS", "JavaScript", "Python", "IA"],
       challenges: "Implémentation d'un système de chat temps réel et intégration d'une IA pour gérer la partie",
@@ -38,7 +38,7 @@ export default function Portfolio() {
     },
     {
       title: "Wall is You",
-      image: "/images/wall.jpg",
+      image: "/wall.jpg",
       description: "Jeu de résolution de labyrinthe avec mécaniques de puzzle",
       technologies: ["Python", "Pygame", "Algorithmes"],
       challenges: "Création d'un système de règles dynamiques et résolution de puzzles complexes",
@@ -48,7 +48,7 @@ export default function Portfolio() {
     },
     {
       title: "Jeu du Moulin",
-      image: "/images/moulin.png",
+      image: "/moulin.png",
       description: "Jeu du moulin en différentes versions avec IA",
       technologies: ["Python", "Tkinter", "Minimax"],
       challenges: "Développement d'une IA compétitive utilisant l'algorithme Minimax",
@@ -58,7 +58,7 @@ export default function Portfolio() {
     },
     {
       title: "Portfolio SI S5",
-      image: "/images/si.png",
+      image: "/si.png",
       description: "Portfolio de présentation développé en HTML/CSS",
       technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
       challenges: "Création d'un design moderne et responsive",
@@ -162,7 +162,7 @@ export default function Portfolio() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="mb-8 relative inline-block">
           <img
-            src="/images/myphoto.png"
+            src="/myphoto.png"
             alt="maphoto"
             className="w-32 h-32 rounded-full mx-auto object-cover shadow-2xl"
           />
@@ -192,10 +192,16 @@ export default function Portfolio() {
             >
               Voir mes projets
             </button>
-            <button className="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all transform hover:scale-105 flex items-center gap-2">
-              <Download size={20} />
-              Télécharger CV
-            </button>
+            <a
+                      href="/CV-S-G.pdf"
+                      download
+                      className="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all transform hover:scale-105 flex items-center gap-2"
+                    >
+                      <Download size={20} />
+                      Télécharger CV
+                    </a>
+
+
           </div>
           <div className="flex justify-center gap-6 mt-8">
             <a href="https://github.com/Rayanemksm1" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
