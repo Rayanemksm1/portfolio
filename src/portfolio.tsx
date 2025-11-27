@@ -17,7 +17,7 @@ export default function Portfolio() {
   const projects = [
     {
       title: "Prédiction du Churn Client",
-      image: "/data.png",
+      image: "/data.jpg",
       description: "Modèle ML de prédiction du taux de désabonnement avec 95% de précision",
       technologies: ["Python", "Scikit-learn", "Pandas", "Régression Logistique", "Pipeline ML"],
       challenges: "Analyser 2000 clients et identifier les facteurs clés de churn avec encodage des variables catégorielles",
@@ -28,7 +28,7 @@ export default function Portfolio() {
     },
     {
       title: "ABS - E-commerce Matériaux",
-      image: "/ABS.png",
+      image: "/ABS.jpg",
       description: "Application web de gestion et vente de matériaux de construction",
       technologies: ["PHP", "MySQL", "HTML/CSS", "JavaScript", "Apache"],
       challenges: "Développement d'une architecture MVC avec gestion de panier, recherche de produits et interface responsive",
@@ -61,7 +61,7 @@ export default function Portfolio() {
     },
     {
       title: "Jeu du Moulin",
-      image: "/moulin.png",
+      image: "/moulin.jpg",
       description: "Jeu du moulin en différentes versions avec IA",
       technologies: ["Python", "Tkinter", "Minimax"],
       challenges: "Développement d'une IA compétitive utilisant l'algorithme Minimax",
@@ -72,7 +72,7 @@ export default function Portfolio() {
     },
     {
       title: "Portfolio SI S5",
-      image: "/si.png",
+      image: "/si.jpg",
       description: "Portfolio de présentation développé en HTML/CSS",
       technologies: ["HTML", "CSS", "JavaScript", "Responsive Design"],
       challenges: "Création d'un design moderne et responsive",
