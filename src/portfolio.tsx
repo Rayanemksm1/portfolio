@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Menu, X, MapPin, Phone, Download, Calendar } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Github, Linkedin, Mail, ExternalLink, Menu, X, MapPin, Phone, Download, Calendar, Database, Code, BarChart3, Cpu, Terminal, Zap } from 'lucide-react';
 
 export default function Portfolio() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('hero');
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
 
   const projects = [
     {
@@ -14,7 +23,8 @@ export default function Portfolio() {
       challenges: "Analyser 2000 clients et identifier les facteurs clés de churn avec encodage des variables catégorielles",
       solutions: "Pipeline ML avec OneHotEncoder et régression logistique. Accuracy 95.25%, Recall 97% pour détecter les churners. Analyse des coefficients révélant l'inactivité et les contrats mensuels comme facteurs majeurs",
       githubUrl: "https://github.com/Rayanemksm1/churn_pred",
-      type: "Data"
+      type: "Data",
+      icon: Database
     },
     {
       title: "ABS - E-commerce Matériaux",
@@ -24,7 +34,8 @@ export default function Portfolio() {
       challenges: "Développement d'une architecture MVC avec gestion de panier, recherche de produits et interface responsive",
       solutions: "Structure MVC simplifiée avec base MySQL, système de panier fonctionnel et interface utilisateur responsive avec FontAwesome",
       githubUrl: "https://github.com/Rayanemksm1/abs",
-      type: "Full Stack"
+      type: "Full Stack",
+      icon: Code
     },
     {
       title: "Jeu du Loup Garou en ligne",
@@ -34,7 +45,8 @@ export default function Portfolio() {
       challenges: "Implémentation d'un système de chat temps réel et intégration d'une IA pour gérer la partie",
       solutions: "Architecture full-stack avec WebSockets pour la communication temps réel et algorithmes d'IA pour l'assistance au jeu",
       githubUrl: "https://github.com/Rayanemksm1/loupgarou",
-      type: "Full Stack"
+      type: "Full Stack",
+      icon: Terminal
     },
     {
       title: "Wall is You",
@@ -44,7 +56,8 @@ export default function Portfolio() {
       challenges: "Création d'un système de règles dynamiques et résolution de puzzles complexes",
       solutions: "Implémentation d'algorithmes de pathfinding et système de règles modulaire",
       githubUrl: "https://github.com/Rayanemksm1/wall_is_you",
-      type: "Python"
+      type: "Python",
+      icon: Cpu
     },
     {
       title: "Jeu du Moulin",
@@ -54,7 +67,8 @@ export default function Portfolio() {
       challenges: "Développement d'une IA compétitive utilisant l'algorithme Minimax",
       solutions: "Implémentation de l'algorithme Minimax avec élagage alpha-beta pour optimiser les performances",
       githubUrl: "https://github.com/Rayanemksm1/Jeu_du-Moulin",
-      type: "Python"
+      type: "Python",
+      icon: Cpu
     },
     {
       title: "Portfolio SI S5",
@@ -64,42 +78,42 @@ export default function Portfolio() {
       challenges: "Création d'un design moderne et responsive",
       solutions: "Utilisation de Flexbox et Grid CSS avec animations fluides",
       githubUrl: "https://rayanemksm1.github.io/Monportfolio/",
-      type: "Web"
+      type: "Web",
+      icon: Code
     }
   ];
 
   const skills = {
-    "Langages de Programmation": ["Python", "Java", "JavaScript", "R", "SQL", "C", "HTML", "CSS", "PHP"],
-    "Frameworks & Bibliothèques": ["React", "Node.js", "Django", "Flask", "Tailwind CSS", "Pandas", "NumPy"],
-    "Data & BI": ["Power BI", "Tableau", "SAS", "PostgreSQL", "MySQL", "Analyse de données"],
-    "Outils & Systèmes": ["Git/GitHub", "Linux", "Unix", "Bash", "REST API"],
-    "Méthodologies": ["Agile (Scrum)", "POO", "Tests unitaires", "CI/CD"],
-    "Soft Skills": ["Travail d'équipe", "Service client", "Gestion des priorités", "Autonomie", "Rigueur"]
+    "Langages": ["Python", "Java", "JavaScript", "R", "SQL", "C", "HTML", "CSS", "PHP"],
+    "Frameworks": ["React", "Node.js", "Django", "Flask", "Tailwind", "Pandas", "NumPy"],
+    "Data & BI": ["Power BI", "Tableau", "SAS", "PostgreSQL", "MySQL", "Analyse"],
+    "DevOps": ["Git/GitHub", "Linux", "Unix", "Bash", "REST API"],
+    "Méthodologies": ["Agile", "POO", "Tests unitaires", "CI/CD"],
+    "Soft Skills": ["Équipe", "Service client", "Priorités", "Autonomie", "Rigueur"]
   };
 
   const experiences = [
-    
     {
       poste: "Licence MIAGE - Mathématiques & Informatique",
       entreprise: "Université Paris Nanterre",
-      periode: "Septembre 2024 - Aujourd'hui",
+      periode: "Sept 2024 - Aujourd'hui",
       description: "Formation axée sur le développement logiciel, la data et la gestion des systèmes d'information, à l'interface entre technologie et business.",
       type: "Formation"
     },
     {
       poste: "Licence 1 Mathématiques & Informatique",
       entreprise: "Université Gustave Eiffel",
-      periode: "Septembre 2023 - Juin 2024",
+      periode: "Sept 2023 - Juin 2024",
       description: "Algorithmie, programmation (C/Python), mathématiques, économie et management.",
       type: "Formation"
     },
     {
       poste: "Commis de salle / Barman",
       entreprise: "Hotel Barrière Fouquet's",
-      periode: "Février 2023 - Mai 2025",
+      periode: "Fév 2023 - Mai 2025",
       description: "Développement du sens du service client et de la gestion des priorités. Travail en équipe dans un environnement exigeant et dynamique.",
       type: "Professionnel"
-    },
+    }
   ];
 
   const scrollToSection = (sectionId) => {
@@ -109,45 +123,70 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
+    <div className="min-h-screen bg-slate-950 text-gray-100 relative overflow-hidden">
+      {/* Animated Background */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-to-br from-cyan-950/20 via-slate-950 to-purple-950/20" />
+        <div 
+          className="absolute w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
+          style={{
+            left: mousePosition.x - 192,
+            top: mousePosition.y - 192,
+            transition: 'all 0.3s ease-out'
+          }}
+        />
+      </div>
+
+      {/* Grid Pattern */}
+      <div className="fixed inset-0 pointer-events-none opacity-10">
+        <div className="absolute inset-0" style={{
+          backgroundImage: 'linear-gradient(rgba(6, 182, 212, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(6, 182, 212, 0.1) 1px, transparent 1px)',
+          backgroundSize: '50px 50px'
+        }} />
+      </div>
+
       {/* Navigation */}
-      <nav className="fixed top-0 w-full bg-white/80 backdrop-blur-md shadow-sm z-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-xl border-b border-cyan-500/20 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              Rayane MEKSEM
-            </h1>
+            <div className="flex items-center gap-2">
+              <Terminal className="text-cyan-400" size={24} />
+              <h1 className="text-xl font-bold">
+                <span className="text-cyan-400">{'<'}</span>
+                <span className="text-white">Rayane MEKSEM</span>
+                <span className="text-cyan-400">{' />'}</span>
+              </h1>
+            </div>
             
             {/* Desktop Menu */}
-            <div className="hidden md:flex space-x-8">
-              {['Accueil', 'À propos', 'Projets', 'Compétences', 'Parcours', 'Contact'].map((item) => (
+            <div className="hidden md:flex space-x-1">
+              {['Accueil', 'Projets', 'Compétences', 'Parcours', 'Contact'].map((item) => (
                 <button
                   key={item}
-                  onClick={() => scrollToSection(item.toLowerCase().replace('à propos', 'apropos'))}
-                  className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className="px-4 py-2 text-gray-300 hover:text-cyan-400 transition-colors font-mono text-sm relative group"
                 >
-                  {item}
+                  <span className="relative z-10">{item}</span>
+                  <span className="absolute inset-0 bg-cyan-500/10 scale-0 group-hover:scale-100 transition-transform rounded" />
                 </button>
               ))}
             </div>
 
-            {/* Mobile Menu Button */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="md:hidden p-2"
+              className="md:hidden p-2 text-cyan-400"
             >
               {menuOpen ? <X /> : <Menu />}
             </button>
           </div>
 
-          {/* Mobile Menu */}
           {menuOpen && (
-            <div className="md:hidden pb-4">
-              {['Accueil', 'À propos', 'Projets', 'Compétences', 'Parcours', 'Contact'].map((item) => (
+            <div className="md:hidden pb-4 space-y-2">
+              {['Accueil', 'Projets', 'Compétences', 'Parcours', 'Contact'].map((item) => (
                 <button
                   key={item}
-                  onClick={() => scrollToSection(item.toLowerCase().replace('à propos', 'apropos'))}
-                  className="block w-full text-left py-2 text-gray-700 hover:text-blue-600"
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className="block w-full text-left py-2 px-4 text-gray-300 hover:text-cyan-400 hover:bg-cyan-500/10 transition-colors rounded"
                 >
                   {item}
                 </button>
@@ -158,236 +197,196 @@ export default function Portfolio() {
       </nav>
 
       {/* Hero Section */}
-      <section id="accueil" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto text-center">
-          <div className="mb-8 relative inline-block">
-          <img
-            src="/myphoto.png"
-            alt="maphoto"
-            className="w-32 h-32 rounded-full mx-auto object-cover shadow-2xl"
-          />
+      <section id="accueil" className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center space-y-8">
+            <div className="relative inline-block">
+              <div className="absolute inset-0 bg-cyan-500/20 blur-xl rounded-full animate-pulse" />
+              <img
+                src="/myphoto.png"
+                alt="Rayane MEKSEM"
+                className="relative w-40 h-40 rounded-full mx-auto object-cover border-4 border-cyan-500/50 shadow-2xl shadow-cyan-500/20"
+              />
+            </div>
 
-          </div>
-          <h2 className="text-5xl font-bold text-gray-900 mb-4">
-            Rayane MEKSEM
-          </h2>
-          <p className="text-2xl text-gray-600 mb-6">
-            Étudiant MIAGE - Développeur & Consultant Data / BI
-          </p>
-          <p className="text-lg text-gray-700 max-w-2xl mx-auto mb-8">
-            Étudiant en Licence MIAGE à l'Université Paris Nanterre, je recherche un stage (2 à 5 mois) 
-            à partir d'avril 2026 pour développer mes compétences en développement logiciel, data et 
-            business intelligence. Curieux, rigoureux et motivé, je souhaite contribuer à des projets innovants.
-          </p>
-          <div className="flex justify-center gap-4 flex-wrap">
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all transform hover:scale-105"
-            >
-              Me Contacter
-            </button>
-            <button
-              onClick={() => scrollToSection('projets')}
-              className="bg-white text-gray-700 px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all border border-gray-300"
-            >
-              Voir mes projets
-            </button>
-            <a
-                      href="/CV-S-G.pdf"
-                      download
-                      className="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transition-all transform hover:scale-105 flex items-center gap-2"
-                    >
-                      <Download size={20} />
-                      Télécharger CV
-                    </a>
-
-
-          </div>
-          <div className="flex justify-center gap-6 mt-8">
-            <a href="https://github.com/Rayanemksm1" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
-              <Github size={28} />
-            </a>
-            <a href="https://www.linkedin.com/in/rayane-meksem-66b591294" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-blue-600 transition-colors">
-              <Linkedin size={28} />
-            </a>
-            <a href="mailto:rayanemksm5@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors">
-              <Mail size={28} />
-            </a>
-          </div>
-        </div>
-      </section>
-
-     {/* About Section */}
-      <section id="apropos" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
-            À Propos de Moi
-          </h2>
-          <p className="text-center text-gray-600 mb-12">
-            Découvrez mon parcours, mes passions et ce qui me motive
-          </p>
-      
-          <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl shadow-lg">
-            
-            {/* Introduction */}
-            <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              Étudiant en troisième année de MIASHS, parcours MIAGE, je me forme à 
-              l'intersection de l'informatique, des mathématiques et de la gestion. 
-              Passionné de développement web et de data, j'ai mené plusieurs projets 
-              concrets qui ont renforcé mes compétences en programmation, en 
-              conception d'interfaces et en travail d’équipe.
-            </p>
-      
-            {/* Info Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <div className="flex items-center justify-center gap-3 text-cyan-400 font-mono">
+                <Terminal size={20} />
+                <span className="animate-pulse">_</span>
+              </div>
               
-              {/* Localisation */}
-              <div className="flex items-center gap-4">
-                <MapPin className="text-blue-600" size={26} />
-                <div>
-                  <p className="font-semibold text-gray-900">Localisation</p>
-                  <p className="text-gray-600">Nanterre, Île-de-France</p>
-                </div>
+              <h2 className="text-5xl md:text-6xl font-bold">
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 bg-clip-text text-transparent">
+                  Rayane MEKSEM
+                </span>
+              </h2>
+              
+              <div className="flex items-center justify-center gap-2 text-xl text-gray-400 font-mono">
+                <Code size={20} className="text-cyan-400" />
+                <span>Développeur</span>
+                <span className="text-cyan-400">|</span>
+                <Database size={20} className="text-purple-400" />
+                <span>Data / BI</span>
               </div>
-      
-              {/* Disponibilité */}
-              <div className="flex items-center gap-4">
-                <Calendar className="text-blue-600" size={26} />
-                <div>
-                  <p className="font-semibold text-gray-900">Disponibilité</p>
-                  <p className="text-gray-600">Stage dès avril 2026 (2-5 mois)</p>
-                </div>
-              </div>
-      
-              {/* Email */}
-              <div className="flex items-center gap-4">
-                <Mail className="text-blue-600" size={26} />
-                <div>
-                  <p className="font-semibold text-gray-900">Email</p>
-                  <p className="text-gray-600 break-all">rayanemksm5@gmail.com</p>
-                </div>
-              </div>
-      
-              {/* Téléphone */}
-              <div className="flex items-center gap-4">
-                <Phone className="text-blue-600" size={26} />
-                <div>
-                  <p className="font-semibold text-gray-900">Téléphone</p>
-                  <p className="text-gray-600">06 02 48 49 35</p>
-                </div>
-              </div>
-      
+
+              <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+                Étudiant MIAGE à Paris Nanterre, je recherche un{' '}
+                <span className="text-cyan-400 font-semibold">stage (2-5 mois)</span> dès{' '}
+                <span className="text-purple-400 font-semibold">avril 2026</span> en développement logiciel, 
+                data science et business intelligence.
+              </p>
             </div>
-      
-            {/* Interests */}
-            <div className="mt-10 pt-6 border-t border-gray-300">
-              <p className="font-semibold text-gray-900 mb-4">Centres d'intérêt</p>
-              <div className="flex flex-wrap gap-3">
-                {["Programmation", "Randonnée", "Voyage", "Escape game"].map((interest, i) => (
-                  <span
-                    key={i}
-                    className="bg-white px-4 py-2 rounded-full text-gray-700 font-medium shadow-sm"
-                  >
-                    {interest}
-                  </span>
-                ))}
-              </div>
+
+            <div className="flex justify-center gap-4 flex-wrap">
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-blue-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-cyan-500/50 transition-all transform hover:scale-105 flex items-center gap-2"
+              >
+                <Zap size={20} />
+                Me Contacter
+              </button>
+              <button
+                onClick={() => scrollToSection('projets')}
+                className="px-8 py-3 bg-slate-800/50 border border-cyan-500/30 text-cyan-400 rounded-lg font-semibold hover:bg-slate-800 hover:border-cyan-500 transition-all flex items-center gap-2"
+              >
+                <Code size={20} />
+                Voir Projets
+              </button>
+              <a
+                href="/CV-S-G.pdf"
+                download
+                className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-105 flex items-center gap-2"
+              >
+                <Download size={20} />
+                Télécharger CV
+              </a>
             </div>
-      
+
+            <div className="flex justify-center gap-6 pt-4">
+              {[
+                { icon: Github, url: "https://github.com/Rayanemksm1", color: "hover:text-white" },
+                { icon: Linkedin, url: "https://www.linkedin.com/in/rayane-meksem-66b591294", color: "hover:text-blue-400" },
+                { icon: Mail, url: "mailto:rayanemksm5@gmail.com", color: "hover:text-cyan-400" }
+              ].map((social, i) => (
+                <a
+                  key={i}
+                  href={social.url}
+                  target={social.url.startsWith('http') ? '_blank' : undefined}
+                  rel={social.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  className={`p-3 bg-slate-800/50 rounded-lg border border-cyan-500/20 ${social.color} transition-all hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/20`}
+                >
+                  <social.icon size={24} />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </section>
-
 
       {/* Projects Section */}
-      <section id="projets" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-blue-50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
-            Mes Projets
-          </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Découvrez une sélection de mes projets académiques qui illustrent mes compétences 
-            en développement et ma capacité à résoudre des problèmes complexes.
-          </p>
-          <div className="grid md:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition-all transform hover:-translate-y-2"
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-6">
-                  <div className="flex justify-between items-start mb-3">
-                    <h3 className="text-xl font-bold text-gray-900">{project.title}</h3>
-                    <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-full text-xs font-semibold">
-                      {project.type}
-                    </span>
+      <section id="projets" className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 mb-4 text-cyan-400 font-mono">
+              <BarChart3 size={24} />
+              <span>{'<projects>'}</span>
+            </div>
+            <h2 className="text-4xl font-bold mb-4">Mes Réalisations</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Projets académiques et personnels en développement, data science et IA
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project, index) => {
+              const IconComponent = project.icon;
+              return (
+                <div
+                  key={index}
+                  className="group bg-slate-900/50 backdrop-blur-sm rounded-xl border border-cyan-500/20 overflow-hidden hover:border-cyan-500 transition-all hover:shadow-xl hover:shadow-cyan-500/20"
+                >
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
+                    <div className="absolute top-4 right-4 p-2 bg-slate-900/80 rounded-lg border border-cyan-500/30">
+                      <IconComponent className="text-cyan-400" size={20} />
+                    </div>
                   </div>
-                  <p className="text-gray-600 mb-4">{project.description}</p>
-                  <div className="mb-4">
-                    <p className="text-sm font-semibold text-gray-700 mb-2">Technologies :</p>
+                  
+                  <div className="p-6 space-y-4">
+                    <div className="flex justify-between items-start">
+                      <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
+                        {project.title}
+                      </h3>
+                      <span className="px-3 py-1 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 rounded-full text-xs font-mono">
+                        {project.type}
+                      </span>
+                    </div>
+                    
+                    <p className="text-gray-400 text-sm line-clamp-2">{project.description}</p>
+                    
                     <div className="flex flex-wrap gap-2">
-                      {project.technologies.map((tech, i) => (
+                      {project.technologies.slice(0, 3).map((tech, i) => (
                         <span
                           key={i}
-                          className="bg-gradient-to-r from-blue-100 to-purple-100 text-gray-700 px-3 py-1 rounded-full text-sm"
+                          className="px-2 py-1 bg-slate-800/50 border border-purple-500/20 text-purple-300 rounded text-xs font-mono"
                         >
                           {tech}
                         </span>
                       ))}
+                      {project.technologies.length > 3 && (
+                        <span className="px-2 py-1 text-gray-500 text-xs">
+                          +{project.technologies.length - 3}
+                        </span>
+                      )}
                     </div>
+                    
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-mono text-sm"
+                    >
+                      <Github size={16} />
+                      <span>View Code</span>
+                      <ExternalLink size={14} />
+                    </a>
                   </div>
-                  <div className="border-t pt-4 mb-4">
-                    <p className="text-sm text-gray-700 mb-2">
-                      <strong>Défis :</strong> {project.challenges}
-                    </p>
-                    <p className="text-sm text-gray-700">
-                      <strong>Solutions :</strong> {project.solutions}
-                    </p>
-                  </div>
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-semibold transition-colors"
-                  >
-                    <Github size={20} />
-                    Voir sur GitHub
-                    <ExternalLink size={16} />
-                  </a>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
 
       {/* Skills Section */}
-      <section id="compétences" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
-            Mes Compétences
-          </h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Un aperçu des technologies et compétences que j'ai acquises au cours 
-            de ma formation MIAGE et de mes projets personnels.
-          </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <section id="compétences" className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 mb-4 text-cyan-400 font-mono">
+              <Cpu size={24} />
+              <span>{'<skills>'}</span>
+            </div>
+            <h2 className="text-4xl font-bold mb-4">Stack Technique</h2>
+            <p className="text-gray-400">Technologies et compétences maîtrisées</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
             {Object.entries(skills).map(([category, items]) => (
               <div
                 key={category}
-                className="bg-gradient-to-br from-white to-blue-50 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all border border-blue-100"
+                className="bg-slate-900/50 backdrop-blur-sm rounded-xl border border-cyan-500/20 p-6 hover:border-cyan-500 transition-all hover:shadow-lg hover:shadow-cyan-500/10"
               >
-                <h3 className="text-xl font-bold mb-4 text-gray-900">{category}</h3>
+                <h3 className="text-lg font-bold text-cyan-400 mb-4 font-mono">{category}</h3>
                 <div className="flex flex-wrap gap-2">
                   {items.map((skill, i) => (
                     <span
                       key={i}
-                      className="bg-white text-gray-700 px-3 py-2 rounded-lg text-sm font-medium shadow-sm border border-gray-200"
+                      className="px-3 py-1.5 bg-slate-800/50 border border-purple-500/20 text-gray-300 rounded-lg text-sm hover:border-purple-500 hover:text-purple-300 transition-colors"
                     >
                       {skill}
                     </span>
@@ -396,154 +395,128 @@ export default function Portfolio() {
               </div>
             ))}
           </div>
-          <div className="mt-12 bg-gradient-to-r from-blue-600 to-purple-600 p-8 rounded-2xl text-white text-center">
-              <h3 className="text-2xl font-bold mb-6">Langues</h3>
-            
-              <div className="flex justify-center items-start gap-16 flex-wrap">
-                
-                <div className="flex flex-col items-center">
-                  <p className="text-xl font-semibold mb-1">Français</p>
-                  <p className="text-blue-100 text-sm">Langue Maternelle / Bilingue</p>
-                </div>
-            
-                <div className="flex flex-col items-center">
-                  <p className="text-xl font-semibold mb-1">Anglais</p>
-                  <p className="text-blue-100 text-sm">Avancé</p>
-                </div>
-            
+
+          <div className="bg-gradient-to-r from-cyan-950/30 to-purple-950/30 border border-cyan-500/20 rounded-xl p-8 text-center">
+            <h3 className="text-2xl font-bold mb-6 text-cyan-400 font-mono">Languages</h3>
+            <div className="flex justify-center gap-12">
+              <div>
+                <p className="text-xl font-semibold text-white mb-1">Français</p>
+                <p className="text-gray-400 text-sm">Langue Maternelle</p>
+              </div>
+              <div>
+                <p className="text-xl font-semibold text-white mb-1">Anglais</p>
+                <p className="text-gray-400 text-sm">Avancé (B2-C1)</p>
               </div>
             </div>
-
+          </div>
         </div>
       </section>
 
-     {/* Experience Section */}
-<section
-  id="parcours"
-  className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-blue-50"
->
-  <div className="max-w-4xl mx-auto">
-    <h2 className="text-4xl font-bold text-center mb-4 text-gray-900">
-      Mon Parcours
-    </h2>
-    <p className="text-center text-gray-600 mb-12">
-      Ma formation académique et mon expérience professionnelle 
-    </p>
+      {/* Experience Section */}
+      <section id="parcours" className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 mb-4 text-cyan-400 font-mono">
+              <Calendar size={24} />
+              <span>{'<experience>'}</span>
+            </div>
+            <h2 className="text-4xl font-bold mb-4">Mon Parcours</h2>
+            <p className="text-gray-400">Formation et expérience professionnelle</p>
+          </div>
 
-    <div className="space-y-10">
-      {experiences.map((exp, index) => (
-        <div
-          key={index}
-          className={`bg-white p-6 rounded-xl shadow-md border-l-4 transition-all hover:shadow-xl ${
-            exp.type === "Formation"
-              ? "border-purple-600"
-              : "border-blue-600"
-          }`}
-        >
-          {/* Header Section */}
-          <div className="flex justify-between items-start flex-wrap gap-4">
-            <div>
-              <h3 className="text-2xl font-bold text-gray-900">
-                {exp.poste}
-              </h3>
-              <p
-                className={`font-semibold ${
+          <div className="space-y-6">
+            {experiences.map((exp, index) => (
+              <div
+                key={index}
+                className={`bg-slate-900/50 backdrop-blur-sm rounded-xl border-l-4 p-6 hover:shadow-lg transition-all ${
                   exp.type === "Formation"
-                    ? "text-purple-600"
-                    : "text-blue-600"
+                    ? "border-l-purple-500 hover:shadow-purple-500/10"
+                    : "border-l-cyan-500 hover:shadow-cyan-500/10"
                 }`}
               >
-                {exp.entreprise}
-              </p>
-            </div>
-
-            <span
-              className={`px-4 py-1.5 rounded-full text-sm font-semibold ${
-                exp.type === "Formation"
-                  ? "bg-purple-100 text-purple-700"
-                  : "bg-blue-100 text-blue-700"
-              }`}
-            >
-              {exp.type}
-            </span>
+                <div className="flex flex-wrap justify-between items-start gap-4 mb-4">
+                  <div>
+                    <h3 className="text-xl font-bold text-white mb-1">{exp.poste}</h3>
+                    <p className={`font-semibold ${
+                      exp.type === "Formation" ? "text-purple-400" : "text-cyan-400"
+                    }`}>
+                      {exp.entreprise}
+                    </p>
+                  </div>
+                  <div className="flex flex-col items-end gap-2">
+                    <span className={`px-4 py-1 rounded-full text-xs font-mono ${
+                      exp.type === "Formation"
+                        ? "bg-purple-500/10 border border-purple-500/30 text-purple-300"
+                        : "bg-cyan-500/10 border border-cyan-500/30 text-cyan-300"
+                    }`}>
+                      {exp.type}
+                    </span>
+                    <span className="text-gray-400 text-sm font-mono">{exp.periode}</span>
+                  </div>
+                </div>
+                <p className="text-gray-400 leading-relaxed">{exp.description}</p>
+              </div>
+            ))}
           </div>
-
-          {/* Date */}
-          <p className="text-gray-600 text-sm mt-4 mb-3 flex items-center gap-2">
-            <Calendar size={16} />
-            {exp.periode}
-          </p>
-
-          {/* Description */}
-          <p className="text-gray-700 leading-relaxed">
-            {exp.description}
-          </p>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
+      </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-600 to-purple-600">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-4 text-white">
-            Me Contacter
-          </h2>
-          <p className="text-xl text-blue-100 mb-12">
-            Vous avez une opportunité de stage ou un projet ? N'hésitez pas à me contacter !
-          </p>
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all">
-              <Mail className="mx-auto mb-4 text-white" size={32} />
-              <p className="text-white font-semibold mb-2">Email</p>
-              <a href="mailto:rayanemksm5@gmail.com" className="text-blue-100 hover:text-white transition-colors">
-                rayanemksm5@gmail.com
-              </a>
+      <section id="contact" className="relative py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 mb-4 text-cyan-400 font-mono">
+              <Mail size={24} />
+              <span>{'<contact>'}</span>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all">
-              <Phone className="mx-auto mb-4 text-white" size={32} />
-              <p className="text-white font-semibold mb-2">Téléphone</p>
-              <a href="tel:0602484935" className="text-blue-100 hover:text-white transition-colors">
-                06 02 48 49 35
-              </a>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all">
-              <Linkedin className="mx-auto mb-4 text-white" size={32} />
-              <p className="text-white font-semibold mb-2">LinkedIn</p>
-              <a href="https://www.linkedin.com/in/rayane-meksem-66b591294" target="_blank" rel="noopener noreferrer" className="text-blue-100 hover:text-white transition-colors">
-                linkedin.com/in/rayane-meksem
-              </a>
-            </div>
-            <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all">
-              <Github className="mx-auto mb-4 text-white" size={32} />
-              <p className="text-white font-semibold mb-2">GitHub</p>
-              <a href="https://github.com/Rayanemksm1" target="_blank" rel="noopener noreferrer" className="text-blue-100 hover:text-white transition-colors">
-                github.com/Rayanemksm1
-              </a>
-            </div>
+            <h2 className="text-4xl font-bold mb-4">Restons Connectés</h2>
+            <p className="text-gray-400">Une opportunité de stage ou un projet ? Contactez-moi !</p>
           </div>
-          <div className="bg-white/10 backdrop-blur-sm p-6 rounded-xl inline-block">
-            <p className="text-blue-100 text-lg mb-2">
-              📍 Basé à Nanterre, Île-de-France
-            </p>
-            <p className="text-white text-xl font-bold">
-              ✨ Disponible pour un stage de 2 à 5 mois dès avril 2026
+
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            {[
+              { icon: Mail, label: "Email", value: "rayanemksm5@gmail.com", link: "mailto:rayanemksm5@gmail.com" },
+              { icon: Phone, label: "Téléphone", value: "06 02 48 49 35", link: "tel:0602484935" },
+              { icon: Linkedin, label: "LinkedIn", value: "rayane-meksem", link: "https://www.linkedin.com/in/rayane-meksem-66b591294" },
+              { icon: Github, label: "GitHub", value: "Rayanemksm1", link: "https://github.com/Rayanemksm1" }
+            ].map((contact, i) => (
+              <a
+                key={i}
+                href={contact.link}
+                target={contact.link.startsWith('http') ? '_blank' : undefined}
+                rel={contact.link.startsWith('http') ? 'noopener noreferrer' : undefined}
+                className="bg-slate-900/50 backdrop-blur-sm border border-cyan-500/20 rounded-xl p-6 hover:border-cyan-500 hover:shadow-lg hover:shadow-cyan-500/10 transition-all group"
+              >
+                <contact.icon className="text-cyan-400 mb-3 group-hover:scale-110 transition-transform" size={32} />
+                <p className="text-white font-semibold mb-1">{contact.label}</p>
+                <p className="text-gray-400 text-sm break-all">{contact.value}</p>
+              </a>
+            ))}
+          </div>
+
+          <div className="bg-gradient-to-r from-cyan-950/30 to-purple-950/30 border border-cyan-500/30 rounded-xl p-6 text-center">
+            <div className="flex items-center justify-center gap-2 mb-2 text-cyan-400">
+              <MapPin size={20} />
+              <p className="text-lg font-semibold">Nanterre, Île-de-France</p>
+            </div>
+            <p className="text-purple-400 text-xl font-bold">
+              ✨ Disponible pour un stage (2-5 mois) dès avril 2026
             </p>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8 px-4">
+      <footer className="relative border-t border-cyan-500/20 py-8 px-4">
         <div className="max-w-6xl mx-auto text-center">
-          <p className="mb-2">© 2025 Rayane MEKSEM. Tous droits réservés.</p>
-          <p className="text-gray-400 text-sm">Étudiant MIAGE | Développeur & Consultant Data / BI</p>
+          <div className="flex items-center justify-center gap-2 mb-2 text-cyan-400 font-mono">
+            <Terminal size={16} />
+            <span>{'</portfolio>'}</span>
+          </div>
+          <p className="text-gray-400">© 2025 Rayane MEKSEM. Tous droits réservés.</p>
+          <p className="text-gray-500 text-sm mt-1 font-mono">Étudiant MIAGE | Dev & Data Analyst</p>
         </div>
       </footer>
     </div>
   );
 }
-
-
