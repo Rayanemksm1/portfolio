@@ -230,9 +230,9 @@ export default function Portfolio() {
               </div>
 
               <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                Étudiant MIAGE à Paris Nanterre, je recherche un{' '}
+                Étudiant MIAGE à Paris Nanterre, je suis à la recherche d'un{' '}
                 <span className="text-cyan-400 font-semibold">stage (2-5 mois)</span> dès{' '}
-                <span className="text-purple-400 font-semibold">avril 2026</span> en développement logiciel, 
+                <span className="text-purple-400 font-semibold">avril 2026</span> afin de développer mes compétences en développement logiciel, 
                 data et business intelligence. Curieux, rigoureux et motivé, je souhaite contribuer à des projets innovants tout en consolidant mes acquis techniques et organisationnels.
               </p>
             </div>
