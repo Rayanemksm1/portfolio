@@ -405,7 +405,7 @@ export default function Portfolio() {
               </div>
               <div>
                 <p className="text-xl font-semibold text-white mb-1">Anglais</p>
-                <p className="text-gray-400 text-sm">Avancé (B2-C1)</p>
+                <p className="text-gray-400 text-sm">Avancé </p>
               </div>
             </div>
           </div>
