@@ -233,7 +233,7 @@ export default function Portfolio() {
                 Étudiant MIAGE à Paris Nanterre, je recherche un{' '}
                 <span className="text-cyan-400 font-semibold">stage (2-5 mois)</span> dès{' '}
                 <span className="text-purple-400 font-semibold">avril 2026</span> en développement logiciel, 
-                data science et business intelligence.
+                data et business intelligence. Curieux, rigoureux et motivé, je souhaite contribuer à des projets innovants tout en consolidant mes acquis techniques et organisationnels.
               </p>
             </div>
 
