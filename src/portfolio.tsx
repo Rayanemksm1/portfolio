@@ -17,7 +17,7 @@ export default function Portfolio() {
   const projects = [
     {
       title: "Prédiction du Churn Client",
-      image: "/data.jpg",
+      image: "/background.jpg",
       description: "Modèle ML de prédiction du taux de désabonnement avec 95% de précision",
       technologies: ["Python", "Scikit-learn", "Pandas", "Régression Logistique", "Pipeline ML"],
       challenges: "Analyser 2000 clients et identifier les facteurs clés de churn avec encodage des variables catégorielles",
@@ -25,6 +25,17 @@ export default function Portfolio() {
       githubUrl: "https://github.com/Rayanemksm1/churn_pred",
       type: "Data",
       icon: Database
+    },
+    {
+      title: "Hospital Management",
+      image: "/ABS.jpg",
+      description: "Application web de gestion de rendez-vous médicaux",
+      technologies: ["Django", "SQLite", "HTML/CSS/JS","Bootsrap"],
+      challenges: "Mise en place d’une authentification sécurisée , gestion des rôles (patient, médecin, admin), communication frontend-backend",
+      solutions: "Structure MVC simplifiée avec base SQLite, système de panier fonctionnel et interface utilisateur responsive avec FontAwesome",
+      githubUrl: "https://rayanemksm.pythonanywhere.com",
+      type: "Full Stack",
+      icon: Code
     },
     {
       title: "ABS - E-commerce Matériaux",
