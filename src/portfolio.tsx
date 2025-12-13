@@ -17,7 +17,7 @@ export default function Portfolio() {
   const projects = [
     {
       title: "Prédiction du Churn Client",
-      image: "/background.jpg",
+      image: "/data.jpg",
       description: "Modèle ML de prédiction du taux de désabonnement avec 95% de précision",
       technologies: ["Python", "Scikit-learn", "Pandas", "Régression Logistique", "Pipeline ML"],
       challenges: "Analyser 2000 clients et identifier les facteurs clés de churn avec encodage des variables catégorielles",
@@ -28,7 +28,7 @@ export default function Portfolio() {
     },
     {
       title: "Hospital Management",
-      image: "/ABS.jpg",
+      image: "/background.jpg",
       description: "Application web de gestion de rendez-vous médicaux",
       technologies: ["Django", "SQLite", "HTML/CSS/JS","Bootsrap"],
       challenges: "Mise en place d’une authentification sécurisée , gestion des rôles (patient, médecin, admin), communication frontend-backend",
