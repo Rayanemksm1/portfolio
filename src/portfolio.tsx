@@ -240,13 +240,6 @@ export default function Portfolio() {
                 <span>Data / BI</span>
               </div>
 
-              <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
-                Étudiant MIAGE à Paris Nanterre, je suis à la recherche d'un{' '}
-                <span className="text-cyan-400 font-semibold">stage (2-5 mois)</span> dès{' '}
-                <span className="text-purple-400 font-semibold">avril 2026</span> afin de développer mes compétences en développement logiciel, 
-                data et business intelligence. Curieux, rigoureux et motivé, je souhaite contribuer à des projets innovants tout en consolidant mes acquis techniques et organisationnels.
-              </p>
-            </div>
 
             <div className="flex justify-center gap-4 flex-wrap">
               <button
@@ -263,14 +256,7 @@ export default function Portfolio() {
                 <Code size={20} />
                 Voir Projets
               </button>
-              <a
-                href="/CV-S-G.pdf"
-                download
-                className="px-8 py-3 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-lg font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all transform hover:scale-105 flex items-center gap-2"
-              >
-                <Download size={20} />
-                Télécharger CV
-              </a>
+      
             </div>
 
             <div className="flex justify-center gap-6 pt-4">
@@ -510,9 +496,6 @@ export default function Portfolio() {
               <MapPin size={20} />
               <p className="text-lg font-semibold">Nanterre, Île-de-France</p>
             </div>
-            <p className="text-purple-400 text-xl font-bold">
-              ✨ Disponible pour un stage (2-5 mois) dès avril 2026
-            </p>
           </div>
         </div>
       </section>
@@ -525,7 +508,7 @@ export default function Portfolio() {
             <span>{'</portfolio>'}</span>
           </div>
           <p className="text-gray-400">© 2025 Rayane MEKSEM. Tous droits réservés.</p>
-          <p className="text-gray-500 text-sm mt-1 font-mono">Étudiant MIAGE | Dev & Data Analyst</p>
+          <p className="text-gray-500 text-sm mt-1 font-mono">Étudiant MIAGE </p>
         </div>
       </footer>
     </div>
